@@ -9,4 +9,5 @@ addpath('molecule/H2O');
 addpath('molecule/H2');
 addpath('molecule/CH4');
 addpath('molecule/C2H6');
+addpath('test');
 end
