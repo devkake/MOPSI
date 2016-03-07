@@ -1,7 +1,9 @@
 function H = hessian_xx_energy_H2O(x, p)
 b = sqrt(2)*x(1)*(1-cos(x(2)))^0.5;
-p_oh = [p(1), p(2)];
-p_hh = [p(3), p(4)];
+% p_oh = [p(1), p(2)];
+% p_hh = [p(3), p(4)];
+p_oh = [1, p(1)];
+p_hh = [1, p(2)];
 H = zeros(2,2);
 H(1, 1) = 2*d2_LJ_d_x2(x(1),p_oh) + d2_LJ_d_x2(b,p_hh)*(d_b_d_a(x))^2;
 H(1, 2) = d2_LJ_d_x2(b,p_hh)*d_b_d_a(x)*d_b_d_theta(x) + d_LJ_d_x(b,p_hh)*(d2_b_d_a_dtheta(x));
